@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <title>board</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-7">
+                <div style="width: 600px; height: 600px" id="board"></div>
+            </div>
+            <div class="col-md-4">
+                <div style="width: 240px;height: 300px" id="sboard"></div>
+            </div>
+        </div>
+    </div>
+    <script src="jquery.min.js"></script>
+    <script src="pubsub.js"></script>
+    <script src="weiqiboard.js"></script>
+    <script>
+        board = new WeiQiBoard("board", {
+            playmode: 1
+        });
+        board.err_handle = function() {
+            alert("err")
+        }
+        board.getStart()
+    </script>
+</body>
+
+</html>
